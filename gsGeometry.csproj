@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C5B9D744-2FC5-4810-BD85-78FB73FB1E8D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>gs</RootNamespace>
+    <AssemblyName>gsGeometry</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="functions\FalloffFunctions.cs" />
+    <Compile Include="implicit\CachingGridImplicit3d.cs" />
+    <Compile Include="implicit\CachingMeshSDF.cs" />
+    <Compile Include="mesh_analysis\MeshTopology.cs" />
+    <Compile Include="mesh_ops\AutoHoleFill.cs" />
+    <Compile Include="mesh_ops\MarchingCubesPro.cs" />
+    <Compile Include="mesh_ops\MeshBoolean.cs" />
+    <Compile Include="mesh_ops\MeshInsertProjectedPolygon.cs" />
+    <Compile Include="mesh_ops\MeshMeshCut.cs" />
+    <Compile Include="mesh_ops\MeshStitchLoops.cs" />
+    <Compile Include="mesh_ops\MinimalHoleFill.cs" />
+    <Compile Include="mesh_ops\PlanarSpansFiller.cs" />
+    <Compile Include="mesh_ops\RemesherPro.cs" />
+    <Compile Include="mesh_ops\RemoveDuplicateTriangles.cs" />
+    <Compile Include="mesh_ops\MeshAssembly.cs" />
+    <Compile Include="mesh_ops\MeshTrimLoop.cs" />
+    <Compile Include="mesh_ops\RemoveOccludedTriangles.cs" />
+    <Compile Include="mesh_ops\SmoothedHoleFill.cs" />
+    <Compile Include="mesh_ops\MeshSpatialSort.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="mesh_ops\MergeCoincidentEdges.cs" />
+    <Compile Include="spatial\DMeshAABBTreePro.cs" />
+    <Compile Include="spatial\EditMeshSpatial.cs" />
+    <Compile Include="spatial\MeshScalarSamplingGrid.cs" />
+    <Compile Include="spatial\MeshWindingNumberGrid.cs" />
+    <Compile Include="spatial\PointSetHashtable.cs" />
+    <Compile Include="mesh_ops\MeshRepairOrientation.cs" />
+    <Compile Include="mesh_ops\MeshAutoRepair.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\geometry3Sharp\geometry3Sharp.csproj">
+      <Project>{0C518DDA-28FE-44CA-9AB0-F9773974F13A}</Project>
+      <Name>geometry3Sharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
